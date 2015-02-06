@@ -9,5 +9,10 @@
   "hubot-redis-brain",
   "hubot-rules",
   "hubot-shipit",
-  "hubot-youtube"
+  "hubot-youtube",
+  "hubot-self-uptime",
+  "hubot-auth",
+  "hubot-http-status",
+  "hubot-codinglove",
+  "hubot-cute-me"
 ]
