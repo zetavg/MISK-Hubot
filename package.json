@@ -1,0 +1,16 @@
+{
+  "name": "hubot",
+  "version": "0.0.0",
+  "private": true,
+
+  "author": "Neson <neson@dex.tw>",
+
+  "description": "A simple helpful robot for your Company",
+
+  "dependencies": {
+  },
+
+  "engines": {
+    "node": "0.10.x"
+  }
+}
