@@ -8,6 +8,8 @@
   "description": "A simple helpful robot for your Company",
 
   "dependencies": {
+    "hubot-heroku-keepalive": "0.0.4",
+    "hubot-xmpp": "^0.1.12"
   },
 
   "engines": {
