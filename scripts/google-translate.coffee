@@ -15,8 +15,9 @@ languages =
   "be": "Belarusian",
   "bg": "Bulgarian",
   "ca": "Catalan",
-  "zh-CN": "Simplified Chinese",
+  "zh-TW": "Chinese",
   "zh-TW": "Traditional Chinese",
+  "zh-CN": "Simplified Chinese",
   "hr": "Croatian",
   "cs": "Czech",
   "da": "Danish",
@@ -108,7 +109,6 @@ module.exports = (robot) ->
           parsed = parsed[0] and parsed[0][0] and parsed[0][0][0]
           if parsed
             if msg.match[2] is undefined
-              msg.send "#{term} is #{language} for #{parsed}"
+              msg.send "#{term} 是 #{language} 的 #{parsed}"
             else
-              msg.send "The #{language} #{term} translates as #{parsed} in #{languages[target]}"
-
+              msg.send "#{language} 裡的 #{term}，用 #{languages[target]} 來說是 #{parsed}"
