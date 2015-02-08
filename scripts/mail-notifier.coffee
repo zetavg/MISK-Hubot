@@ -41,7 +41,7 @@ module.exports = (robot) ->
     config.mailbox = "INBOX"
 
   unless config.markSeen
-    config.markSeen = false
+    config.markSeen = true
 
   unless config.fetchUnreadOnStart
     config.fetchUnreadOnStart = true
