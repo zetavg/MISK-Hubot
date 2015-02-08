@@ -71,7 +71,7 @@ module.exports = (robot) ->
     text = text.substring(0, 100) + '...' if text.length > 100
 
     message = """
-                :mailbox_with_mail: You've Got Mail：「#{mail.subject}」，來自 #{from.join("、")}，
+                :mailbox_with_mail: 「#{mail.subject}」，來自 #{from.join("、")}，
                 發送於 #{date.fromNow()} (#{date.format("LLLL")})：
                 「#{text}」。
               """
