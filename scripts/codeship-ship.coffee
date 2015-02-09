@@ -48,6 +48,8 @@ module.exports = (robot) ->
 
         message = message.substring(0, 100) + '...' if message.length > 100
 
+        message = message.replace /\n|\r/g, ' '
+
         # Check if posting is needed
         if validBranches.indexOf(branch) > -1
 
