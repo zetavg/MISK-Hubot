@@ -58,13 +58,16 @@ module.exports = (robot) ->
                     ```
                     """
         when 'Deploy'
-          message = """
-                    :white_check_mark: Application #{data.application} has been successfully deployed to #{data.hostname}.
-                    ```
-                    Application Deploy - domains: #{data.deploy.domains}, by: #{data.deploy.deploying_user}, application_type: #{data.deploy.application_type}
-                    Server - id: #{data.id}, type: #{data.instance_type}, ip: #{data.ip}, private_ip: #{data.private_ip}, layers: #{data.layers}, backends: #{data.backends}, aws_instance_id:#{data.aws_instance_id}
-                    ```
-                    """
+          if data.deploy.deploying_user
+            message = """
+                      :white_check_mark: Application #{data.application} has been successfully deployed to #{data.hostname}.
+                      ```
+                      Application Deploy - domains: #{data.deploy.domains}, by: #{data.deploy.deploying_user}, application_type: #{data.deploy.application_type}
+                      Server - id: #{data.id}, type: #{data.instance_type}, ip: #{data.ip}, private_ip: #{data.private_ip}, layers: #{data.layers}, backends: #{data.backends}, aws_instance_id:#{data.aws_instance_id}
+                      ```
+                      """
+          else
+            message = ''
         when 'Undeploy'
           message = """
                     :wine_glass: Application #{data.application} has been undeployed from #{data.hostname}.
@@ -84,7 +87,7 @@ module.exports = (robot) ->
       # Post message in rooms
       for roomName in roomNames
         fullRoomName = (roomNamePrefix + roomName + roomNamePostfix)
-        robot.messageRoom fullRoomName, message
+        robot.messageRoom(fullRoomName, message) if message
 
       res.end "{ success: 200 }"
 
