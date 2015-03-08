@@ -45,7 +45,8 @@
     "mail-listener2": "~0.1.7",
     "underscore": "^1.7.0",
     "querystring": "~0.2.0",
-    "url": "~0.7.9"
+    "url": "~0.7.9",
+    "aws-sdk": "~2.1.16"
   },
 
   "engines": {
